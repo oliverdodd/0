@@ -1,0 +1,12 @@
+/*----------------------------------------------------------------------------*\
+|* 0                                                                          *|
+\*----------------------------------------------------------------------------*/
+/* ELEMENTS                                                                   */
+*		{ font-family:Courier New; font-size:13px; color:black;  }
+body		{ background-color:white; }
+a		{ text-decoration:none; }
+a:hover		{ color:#444444; }
+input, select, textarea
+		{ font-size:11px; border:solid #AAAAAA 1px; }
+input[type="button"],input[type="submit"]
+		{ background:#EEEEEE; }
