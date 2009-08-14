@@ -46,6 +46,7 @@ class _0
 		$pg = _::REQUEST('Pg',null);
 		if ($pg === null) return;
 		$o = _::A(_::GLOBALS('pages'),$pg);
+		if ($o === null || !is_object($o)) return;
 		$c = $o->display();
 		return (_::AJAX() || _::POST('ajax')) ? die($c) : $c;
 	}
@@ -118,17 +119,23 @@ class _0
 	\*--------------------------------------------------------------------*/
 	public static function js($tags=false)
 	{
-		$files = array_merge(_01001111::js(),array(
+		$files = array(
+			pLIB.'js/prototype.js',
+			pLIB.'js/effects.js',
+			pLIB.'js/window.js',
+			p01001111.'js/+.js',
+			p01001111.'js/dom+.js',
 			p_0_.'components/js/0.js'
-		));
+		);
 		return $tags ? XHTML::javascripts($files) : $files;
 	}
 	public static function css($tags=false)
 	{
-		$files = array_merge(_01001111::css(),array(
+		$files = array(
+			p01001111.'css/01001111.css',
 			//p_0_.'components/css/0.css',
 			pLIB.'css/themes/default.css',
-			pLIB.'css/themes/alphacube.css'));
+			pLIB.'css/themes/alphacube.css');
 		return $tags ? XHTML::stylesheets($files) : $files;
 	}
 	
