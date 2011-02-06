@@ -1,0 +1,1 @@
+Simple, lightweight, mini-framework for creating small PHP websites.

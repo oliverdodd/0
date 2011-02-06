@@ -25,6 +25,7 @@ def('d_0_',		dirname(dirname(dirname(__FILE__))).'/');
 def('p_0_',		Filesystem::relativePath(d_0_,true,true).'/');
 def('u_0_',		_::SERVER('PHP_SELF'));
 def('SITE_TITLE',	"0");
+def('MINIFIED',		true);
 /*-AUTORUN--------------------------------------------------------------------*/
 _0::process();
 /*----------------------------------------------------------------------------*/
@@ -119,7 +120,7 @@ class _0
 	\*--------------------------------------------------------------------*/
 	public static function js($tags=false)
 	{
-		$files = array(
+		$files = MINIFIED ? p_0_.'components/js/0min.js'  : array(
 			pLIB.'js/prototype.js',
 			pLIB.'js/effects.js',
 			pLIB.'js/window.js',
@@ -131,7 +132,7 @@ class _0
 	}
 	public static function css($tags=false)
 	{
-		$files = array(
+		$files = MINIFIED ? p_0_.'components/css/0min.css'  : array(
 			p01001111.'css/01001111.css',
 			//p_0_.'components/css/0.css',
 			pLIB.'css/themes/default.css',

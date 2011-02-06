@@ -125,6 +125,12 @@ class TabbedPane
 			this.setActive(id);
 			this.hidePanes();
 			this.showPane(id);
+			<?php if (_::C('GOOGLE_ANALYTICS')) echo "
+			  try {	var t = _gat._getTracker('"._::C('GOOGLE_ANALYTICS')."');
+			  	t._initData();
+			  	t._trackEvent('tab', id);
+			  } catch(e) {}";
+			?>
 		},
 		/*-ACTIVE TAB-------------------------------------------------*/
 		stripActive: function()
